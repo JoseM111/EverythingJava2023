@@ -4,52 +4,56 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-public interface Utilities {
+public class Utilities {
   // helper function ============================
-  static void printFormatted(String strArg, String[] myIntArray) {
+   public static void printFormatted(String strArg, String[] array) {
     System.out.printf("%s: %%s%%n".formatted(strArg),
-      stringMeUp(myIntArray));
+      stringMeUp(array));
   }
   
-  static void printFormatted(String strArg, int[] myIntArray) {
+  public static void printFormatted(String strArg, int[] array) {
     System.out.printf("%s: %%s%%n".formatted(strArg),
-      stringMeUp(myIntArray));
+      stringMeUp(array));
   }
   
-  static void printArrayWithIndices(String strArg, int itemIndex, double[] myDoubleArray) {
+  public static void printArrayWithIndices(String strArg, int itemIndex, double[] array) {
     System.out.printf("\n%s: %%s%%n".formatted(strArg),
-      myDoubleArray[ itemIndex ]);
+      array[ itemIndex ]);
   }
   
-  static void printArrayWithIndices(String strArg, int itemIndex, int[] myIntArray) {
+  public static void printArrayWithIndices(String strArg, int itemIndex, int[] array) {
     System.out.printf("\n%s: %%s%%n".formatted(strArg),
-      myIntArray[ itemIndex ]);
+      array[ itemIndex ]);
   }
   
-  static String stringMeUp(int[] arrayValue) {
-    return Arrays.toString(arrayValue);
-  }
-  static String stringMeUp(Double[] arrayValue) {
-    return Arrays.toString(arrayValue);
-  }
-  static String stringMeUp(String[] arrayValue) {
+  public static String stringMeUp(int[] arrayValue) {
     return Arrays.toString(arrayValue);
   }
   
-  static void testEquality(String label, int[] arr1, int[] arr2, String areArraysEqual) {
+  @SuppressWarnings( "unused" )
+  public static String stringMeUp(Double[] arrayValue) {
+    return Arrays.toString(arrayValue);
+  }
+  public static String stringMeUp(String[] arrayValue) {
+    return Arrays.toString(arrayValue);
+  }
+  
+  public static void testEquality(String label, int[] arr1, int[] arr2, String areArraysEqual) {
     System.out.printf("%s\n   {%%s} == {%%s}: %%s%%n".formatted(label),
       Utilities.stringMeUp(arr1),
       Utilities.stringMeUp(arr2),
       areArraysEqual);
   }
-  static void testEquality(String label, String[] arr1, String[] arr2, String areArraysEqual) {
+  
+  @SuppressWarnings( "unused" )
+  public static void testEquality(String label, String[] arr1, String[] arr2, String areArraysEqual) {
     System.out.printf("%s\n   {%%s} == {%%s}: %%s%%n".formatted(label),
       Utilities.stringMeUp(arr1),
       Utilities.stringMeUp(arr2),
       areArraysEqual);
   }
   
-  static int[] getRandomArray(int len) {
+  public static int[] getRandomArray(int len) {
     Random rand = new Random();
     
     // Generate an IntStream with the length 'len' and map each
@@ -58,5 +62,9 @@ public interface Utilities {
     return IntStream.generate(() -> rand.nextInt(100))
       .limit(len)
       .toArray();
+  }
+  
+  public static <TodoType> TodoType todo() {
+    throw new UnsupportedOperationException("Method not implemented");
   }
 }
