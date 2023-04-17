@@ -1,6 +1,7 @@
 package josem111;
 // **************************************************
 
+import josem111.challenges.Challenge1;
 import josem111.examples.Example1;
 import josem111.examples.Example2;
 // ***************************************************
@@ -15,11 +16,9 @@ public class Main {
     /* example #2 */
     Example2.display();
     // -----------------------------------------------------
-    /* example #3 */
-    
+    /* challenge #1 */
+    Challenge1.display();
     // -----------------------------------------------------
-    
-    
     System.out.println("**************************************\n");
   }
   // ***************************************************

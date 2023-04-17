@@ -1,8 +1,8 @@
 package josem111.examples;
-
+// ***************************************************
 
 import josem111.utils.Utilities;
-
+// ***************************************************
 
 public class Example1 {
   
@@ -47,3 +47,4 @@ public class Example1 {
     Utilities.printFormatted("*. newFirstSix", newFirstSix);
   }
 }
+// ***************************************************
