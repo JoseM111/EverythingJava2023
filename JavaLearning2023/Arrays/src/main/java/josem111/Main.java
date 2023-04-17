@@ -1,11 +1,9 @@
 package josem111;
 // **************************************************
 
+import josem111.challenges.Challenge1;
 import josem111.examples.Example1;
 import josem111.examples.Example2;
-import josem111.utils.Utilities;
-
-import static josem111.utils.Utilities.*;
 // ***************************************************
 
 public class Main {
@@ -19,25 +17,11 @@ public class Main {
     Example2.display();
     // -----------------------------------------------------
     /* challenge #1 */
-    display();
+    Challenge1.display();
     // -----------------------------------------------------
-    
-    
     System.out.println("**************************************\n");
   }
   // ***************************************************
-  public static void display() {
-    int[] unsortedArr = Utilities.getRandomArray(5);
-    Utilities.printFormatted("*. unsortedArr", unsortedArr);
-    
-    
-  }
-  
-  public static int[] sortIntegers(int[] array) {
-    
-    return todo();
-  }
-  
   
 }
 

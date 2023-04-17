@@ -1,8 +1,10 @@
 package josem111.examples;
+// ***************************************************
 
 import josem111.utils.Utilities;
 
 import java.util.Arrays;
+// ***************************************************
 
 public class Example2 {
   public static void display() {
@@ -26,3 +28,4 @@ public class Example2 {
     Utilities.testEquality("*. areArraysEqual", s1, s2, areArraysEqual);
   }
 }
+// ***************************************************
