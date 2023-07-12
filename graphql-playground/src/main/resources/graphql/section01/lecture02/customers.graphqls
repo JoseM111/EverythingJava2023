@@ -1,0 +1,29 @@
+# FILE: graphql/section01/customers.graphqls
+# ___________________________________________________________
+
+type Query {
+    # use this to fetch all customers
+    customers: [Customer]!
+    # fetch a customer by their ID
+    customerByID(id: ID!): Customer
+    # filTer a list of customers & fetch by name
+    customersNameContains(name: String!): [Customer]
+    # filter customer by age range. it is non-nullable,
+    # so if no customers found, it will return an empty list `[]`
+    customerByAgeRange(filter: AgeRangeFilter!): [Customer]!
+}
+# ___________________________________________________________
+
+input AgeRangeFilter {
+    minAge: Int!
+    maxAge: Int!
+}
+# ___________________________________________________________
+
+type Customer {
+    id: ID
+    name: String
+    age: Int
+    city: String
+}
+# ___________________________________________________________
