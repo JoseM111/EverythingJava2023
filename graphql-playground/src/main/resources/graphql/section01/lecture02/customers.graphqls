@@ -1,4 +1,4 @@
-# FILE: graphql/section01/customers.graphqls
+# FILE: graphql/section01/lecture02/customers.graphqls
 # ___________________________________________________________
 
 type Query {

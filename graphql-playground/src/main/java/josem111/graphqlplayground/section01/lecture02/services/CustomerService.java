@@ -2,8 +2,8 @@ package josem111.graphqlplayground.section01.lecture02.services;
 // FILE: services/CustomerService.java
 // ___________________________________________________________
 
-import josem111.graphqlplayground.section01.lecture02.models.AgeRangeFilter;
-import josem111.graphqlplayground.section01.lecture02.models.Customer;
+import josem111.graphqlplayground.section01.lecture02.dto.AgeRangeFilter;
+import josem111.graphqlplayground.section01.lecture02.dto.Customer;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -13,10 +13,10 @@ import reactor.core.publisher.Mono;
 @Service
 public class CustomerService {
   private final Flux<Customer> fluxCustomer = Flux.just(
-    Customer.create(1, "Sami", 20, "Atlanta"),
-    Customer.create(2, "Jake", 10, "Las Vegas"),
-    Customer.create(3, "Mike", 15, "Miami"),
-    Customer.create(4, "John", 5, "Houston"));
+    new Customer(1, "Sami", 20, "Atlanta"),
+    new Customer(2, "Jake", 10, "Las Vegas"),
+    new Customer(3, "Mike", 15, "Miami"),
+    new Customer(4, "John", 5, "Houston"));
   
   public Flux<Customer> allCustomers() {
     return fluxCustomer;
@@ -26,7 +26,7 @@ public class CustomerService {
     return fluxCustomer
       .filter((Customer customer) -> {
         return customer
-          .getId()
+          .id()
           .equals(id);
       })
       .next();
@@ -35,7 +35,7 @@ public class CustomerService {
   public Flux<Customer> nameContains(String name) {
     return fluxCustomer.filter((Customer customer) -> {
       return customer
-        .getName()
+        .name()
         .contains(name);
     });
   }
@@ -43,9 +43,9 @@ public class CustomerService {
   public Flux<Customer> filterByAge(AgeRangeFilter filter) {
     return fluxCustomer.filter((Customer customer) -> {
       return (
-        customer.getAge() >= filter.getMinAge()
+        customer.age() >= filter.minAge()
           &&
-          customer.getAge() <= filter.getMaxAge()
+          customer.age() <= filter.maxAge()
       );
     });
   }
