@@ -1,0 +1,23 @@
+# FILE: graphql/section01/lecture03/schema.graphqls
+# ___________________________________________________________
+
+# exposing the api with the Query-type
+type Query {
+    customers: [Customer]!
+}
+# ___________________________________________________________
+
+type Customer {
+    id: ID!
+    name: String
+    age: Int
+    city: String
+    orders: [CustomerOrder]!
+}
+# ___________________________________________________________
+
+type CustomerOrder {
+    id: ID!
+    description: String
+}
+# ___________________________________________________________

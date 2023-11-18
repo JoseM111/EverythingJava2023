@@ -45,8 +45,8 @@ public class Utilities {
   @SuppressWarnings( "unused" )
   public static void testEquality(String label, String[] arr1, String[] arr2, String areArraysEqual) {
     System.out.printf("%s\n   {%%s} == {%%s}: %%s%%n".formatted(label),
-      Utilities.stringMeUp(arr1),
-      Utilities.stringMeUp(arr2),
+      stringMeUp(arr1),
+      stringMeUp(arr2),
       areArraysEqual);
   }
   

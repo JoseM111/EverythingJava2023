@@ -2,8 +2,8 @@ package josem111.graphqlplayground.section01.lecture02.controllers;
 // FILE: controllers/CustomerController.java
 // ___________________________________________________________
 
-import josem111.graphqlplayground.section01.lecture02.models.AgeRangeFilter;
-import josem111.graphqlplayground.section01.lecture02.models.Customer;
+import josem111.graphqlplayground.section01.lecture02.dto.AgeRangeFilter;
+import josem111.graphqlplayground.section01.lecture02.dto.Customer;
 import josem111.graphqlplayground.section01.lecture02.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
